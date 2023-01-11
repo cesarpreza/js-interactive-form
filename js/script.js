@@ -1,5 +1,6 @@
 //Autofocus on the name input field on load of the form. 
 userName = document.querySelector('#name');
+email = document.querySelector('email');
 userName.focus();
 
 document.querySelector('#other-job-role').type = 'hidden';
@@ -8,6 +9,17 @@ userName.addEventListener('input', function(e) {
     userName = e.target.value;
     console.log(userName)
 })
+
+function emailValidation() {
+    const userEmail = /^([a-z\d\.-])+@([a-z\d]+)\.([a-z]+)(\.[a-z]{2,8})?$/;
+    let testEmail = 'email333@yahoo.com';
+    let result = userEmail.test(testEmail);
+    console.log(result);
+}
+
+
+
+
 
 
 function submitForm() {
@@ -18,4 +30,5 @@ function submitForm() {
     })
 }
 
+emailValidation()
 submitForm();
