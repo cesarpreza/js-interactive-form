@@ -10,18 +10,12 @@ userName.addEventListener('input', function(e) {
 })
 
 
-// function selectJobRole() {
-//     let jobTitle = document.querySelector('#title').value;
-//     let selectOption = document.querySelector('select');
-    
-//     selectOption.addEventlistener('onChange', e => {
-//         console.log(selectOption);
-//     })
-//     console.log(jobTitle, selectOption);
-// }
+function submitForm() {
+    const submitButton = document.querySelector('#submit-button');
+    submitButton.addEventListener('click', function (e) {
+        e.preventDefault;
+        console.log('button clicked')
+    })
+}
 
-
-// document.querySelector('#submit-button').addEventListener('click', e => {
-//     e.preventDefault;
-// })
-//selectJobRole();
+submitForm();
