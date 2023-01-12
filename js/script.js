@@ -1,31 +1,33 @@
 //Autofocus on the name input field on load of the form. 
-userName = document.querySelector('#name');
-email = document.querySelector('email');
+let userName = document.querySelector('#name');
+let email = document.querySelector('email');
 userName.focus();
 
 document.querySelector('#other-job-role').type = 'hidden';
 
-userName.addEventListener('input', function(e) {
-    userName = e.target.value;
-    console.log(userName)
-})
+
+
+/*takes the input from the user and updates the users name with every keypress */
+    userName.addEventListener('input', function (e) {
+        userName = e.target.value;
+        console.log(userName);
+    });
 
 function emailValidation() {
-    const userEmail = /^([a-z\d\.-])+@([a-z\d]+)\.([a-z]+)(\.[a-z]{2,8})?$/;
+    //Regex to test if the email is valid. 
+    const validEmail = /^([a-z\d\.-])+@([a-z\d]+)\.([a-z]+)(\.[a-z]{2,8})?$/;
     let testEmail = 'email333@yahoo.com';
-    let result = userEmail.test(testEmail);
-    console.log(result);
+    let isValidEmail = validEmail.test(testEmail);
+    console.log(isValidEmail);
+    /*Check to see if the input in the email field is a valid email address comparing it 
+    to the userEmail regex.*/
+    
 }
-
-
-
-
-
 
 function submitForm() {
     const submitButton = document.querySelector('#submit-button');
     submitButton.addEventListener('click', function (e) {
-        e.preventDefault;
+        e.preventDefault();
         console.log('button clicked')
     })
 }
