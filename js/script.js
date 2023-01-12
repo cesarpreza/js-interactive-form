@@ -19,18 +19,17 @@ email.addEventListener('input', function (e) {
     })
 
 function emailValidation(userEmail) {
-    let emailHint = document.querySelector('#email-hint.email-hint.hint');
+    let emailHint = document.querySelectorAll('.hint');
     // Regex to test if the email is valid and contains a username an @ symbol a mailserver and domain 
     const validEmail = /^([a-z\d\.-])+@([a-z\d]+)\.([a-z]+)(\.[a-z]{2,8})?$/;
-    let testEmail = 'email333@yahoo.com';
     let isValidEmail = validEmail.test(userEmail.value);
 
     if (isValidEmail) {
+        emailHint[1].style.display = 'none';
         console.log('success!');
     } else {
-        //if email is invalid, change hint display from hidden to visible;
-        emailHint.style.display = 'visible';
-        email.style.color = 'red';
+        //if email is invalid, change hint display from hidden to block;
+        emailHint[1].style.display = 'block';
         console.log('error');
     }
 
